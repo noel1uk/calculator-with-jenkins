@@ -10,6 +10,12 @@ pipeline {
             steps {
                 sh "./mvnw test"
             }
+            post {
+                success {
+                    junit 'target/*'
+                    jacoco(execPattern: 'target/jacoco.exec')
+                }
+            }
         }
     }
 }
