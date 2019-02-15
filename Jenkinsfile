@@ -12,7 +12,7 @@ pipeline {
             }
         }
         stage("Jacoco") {
-            step([$class: 'JacocoPublisher',
+            steps([$class: 'JacocoPublisher',
                   execPattern: 'target/*.exec',
                   classPattern: 'target/classes',
                   sourcePattern: 'src/main/java',
